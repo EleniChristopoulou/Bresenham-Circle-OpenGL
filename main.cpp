@@ -9,26 +9,6 @@ int xs = 0, ys = 0, r = 100;
 int xc = 10, yc =0;
 float theta = 0;
 
-void firstOctant(int r, int xc, int yc){
-    int x, y, e;
-    x = (int) (r*sqrt(2)/2);
-    y = x;
-    e = - r;
-    while (y >= 0) {
-        glVertex2i(x+xc, y+yc);
-        glVertex2i(-x+xc, y+yc);
-        glVertex2i(x+xc, -y+yc);
-        glVertex2i(-x+xc, -y+yc);
-        
-        y--;
-        e = e + 2 * y + 1;
-        if (e >= 0) {
-            x++;
-            e = e - 2 * x + 2;
-        }
-    }
-}
-
 void secondOctant(int r, int xc, int yc){
     int x, y, e;
     x = 0;
@@ -39,6 +19,12 @@ void secondOctant(int r, int xc, int yc){
         glVertex2i(-x+xc, y+yc);
         glVertex2i(x+xc, -y+yc);
         glVertex2i(-x+xc, -y+yc);
+
+        
+        glVertex2i(y+xc, x+yc);
+        glVertex2i(y+xc, -x+yc);
+        glVertex2i(-y+xc,x+yc);
+        glVertex2i(-y+xc,-x+yc);
         
         x++;
         e = e + 2 * x + 1;
