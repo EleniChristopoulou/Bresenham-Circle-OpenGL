@@ -4,10 +4,7 @@
 #include<math.h>
 #include<time.h>
 
-int counter = 0;
-int xs = 0, ys = 0, r = 100;
-int xc = 10, yc =0;
-float theta = 0;
+int xc = 10, yc =0, r = 100;        //circle Specs, (center x,y and radius)
 
 void secondOctant(int r, int xc, int yc){
     int x, y, e;
@@ -51,13 +48,6 @@ void display()
  
  glColor3f(0, 0, 1);
 
-//     if(counter%2000==0){
-//         theta = M_PI/16 + theta;
-//         ye = (int) 100*(sin(theta));
-//         xe = (int) 100*(cos(theta));
-//     }
-
-//  counter++;
  glutPostRedisplay();
  glEnd();
  glFlush();
