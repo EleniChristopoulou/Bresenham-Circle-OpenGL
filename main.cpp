@@ -49,38 +49,6 @@ void secondOctant(int r, int xc, int yc){
     }
 }
 
-void fifthOctant(int r, int xc, int yc){
-    int x, y, e;
-    x = (int) (-r*sqrt(2)/2);
-    y = x;
-    e = r;
-    while (y <= 0) {
-        glVertex2i(x, y);
-        y++;
-        e = e + 2 * y + 1;
-        if (e <= 0) {
-            x--;
-            e = e - 2 * x + 2;
-        }
-    }
-}
-
-void sixthOctant(int r, int xc, int yc){
-    int x, y, e;
-    x = 0;
-    y = -r;
-    e = - r;
-    while (x >= y) {
-        glVertex2i(x, y);
-        x--;
-        e = e + 2 * x + 1;
-        if (e <= 0) {
-            y++;
-            e = e - 2 * y + 2;
-        }
-    }
-}
-
 void bresenhamAlgorithm(){
     secondOctant(r,xc,yc);
     firstOctant(r,xc,yc);
