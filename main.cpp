@@ -37,7 +37,6 @@ void secondOctant(int r, int xc, int yc){
 
 void bresenhamAlgorithm(){
     secondOctant(r,xc,yc);
-    firstOctant(r,xc,yc);
 }
 
 void display()
